@@ -7,10 +7,10 @@ const casasSchema = new Schema(
     name: { type: String, required: true },
     escudo: { type: String, required:true },
     fundador: { type: String, require: true },
-    color: { type: Number, required: false },
+    color: { type: String, required: false },
     animal: { type: String, required: false },
     elemento: { type: String, required: true },
-    personajes: [{ type: Schema.Types.ObjectId, ref: "characters"}]
+    personajes: [{ type: Schema.Types.ObjectId, ref: "character"}]
   },
   { timestamps: true }
 );
