@@ -14,6 +14,6 @@ const {
 router.get("/", getAllCharacters);
 router.get("/:id", getCharacterByID);
 router.post("/",createCharacter);
-router.delete("/",deleteCharacter);
+router.delete("/:id",deleteCharacter);
 
 module.exports = router;
