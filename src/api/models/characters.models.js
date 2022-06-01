@@ -10,6 +10,7 @@ const CharacterSchema = new Schema(
         muggle: {type: Boolean, required: false},
         photo: { type: String, required: true },
         pet: { type: String, required: false },
+        varitas : {type: Schema.Types.ObjectId, ref: "varitas"}
     },
     { timestamps: true }
 );

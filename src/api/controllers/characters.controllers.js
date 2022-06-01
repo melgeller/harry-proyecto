@@ -4,7 +4,7 @@ const HTTPSTATUSCODE = require("../../utils/httpStatusCode");
 
 const getAllCharacters = async (req, res, next) => {
     try {
-      const allCharacters = await Character.find();
+      const allCharacters = await Character.find().populate("varitas");
       return res.json({
         status: 200,
         message: HTTPSTATUSCODE[200],
@@ -18,7 +18,7 @@ const getAllCharacters = async (req, res, next) => {
   const getCharacterByID = async (req, res, next) => {
     try {
       const id = req.params.id;
-      const characterByID = await Character.findById(id);
+      const characterByID = await Character.findById(id).populate("varitas");
       return res.json({
         status: 200,
         message: HTTPSTATUSCODE[200],

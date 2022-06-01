@@ -4,7 +4,7 @@ const HTTPSTATUSCODE = require("../../utils/httpStatusCode");
 
 const getAllcasas = async (req, res, next) => {
   try {
-    const allcasas = await casas.find();
+    const allcasas = await casas.find().populate("characters");
     return res.json({
       status: 200,
       message: HTTPSTATUSCODE[200],
@@ -18,7 +18,7 @@ const getAllcasas = async (req, res, next) => {
 const getcasasByID = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const casasByID = await casas.findById(id);
+    const casasByID = await casas.findById(id).populate("characters");
     return res.json({
       status: 200,
       message: HTTPSTATUSCODE[200],

@@ -17,6 +17,9 @@ const PORT = process.env.PORT || 5000;
 
 const server = express();
 
+server.use(express.json());
+server.use(express.urlencoded({ extended: false }));
+
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
   res.header('Access-Control-Allow-Credentials', true);
@@ -35,8 +38,7 @@ server.use(
     })
   );
 
-  server.use(express.json());
-  server.use(express.urlencoded({ extended: true }));
+
 
   server.set("secretKey", JWT_SECRET)
   

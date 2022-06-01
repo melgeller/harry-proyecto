@@ -3,7 +3,7 @@ const HTTPSTATUSCODE = require("../../utils/httpStatusCode");
 
 const getAllVaritas = async (req, res, next) => {
   try {
-    const allVaritas = await Varitas.find();
+    const allVaritas = await Varita.find();
     return res.json({
       status: 200,
       message: HTTPSTATUSCODE[200],
