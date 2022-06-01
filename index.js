@@ -11,6 +11,7 @@ connect()
 const varitasRouter = require("./src/api/routes/varitas.routes");
 const casasRouter = require("./src/api/routes/casas.routes");
 const charactersRouter = require("./src/api/routes/characters.routes");
+const userRouter = require("./src/api/routes/users.routes");
 
 const PORT = process.env.PORT || 5000;
 
@@ -24,6 +25,8 @@ server.use((req, res, next) => {
 });
 
 const JWT_SECRET = process.env.JWT_SECRET
+
+server.use(logger("dev"))
 
 server.use(
     cors({
@@ -40,6 +43,8 @@ server.use(
   server.use("/characters", charactersRouter);
   server.use("/casas", casasRouter);
   server.use("/varitas", varitasRouter)
+  server.use("/users", userRouter);
+  
 
   server.listen(PORT, () =>{
     console.log(`Server running on http://localhost:${PORT}`);
