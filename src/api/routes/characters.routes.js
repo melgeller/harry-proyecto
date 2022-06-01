@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("../../middlewares/file")
 
-
-const {isAuth} = require("../../middlewares/auth.middleware");
 
 const {
   getAllCharacters,
@@ -13,7 +12,7 @@ const {
 
 router.get("/", getAllCharacters);
 router.get("/:id", getCharacterByID);
-router.post("/",createCharacter);
+router.post("/", upload.single("photo"), createCharacter);
 router.delete("/:id",deleteCharacter);
 
 module.exports = router;

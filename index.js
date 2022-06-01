@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const logger = require("morgan");
+const cloudinary = require('cloudinary').v2
 
 dotenv.config();
 
@@ -19,6 +20,12 @@ const server = express();
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+})
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
