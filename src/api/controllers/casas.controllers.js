@@ -32,6 +32,9 @@ const getcasasByID = async (req, res, next) => {
 const createcasas = async (req, res, next) => {
   try {
     const newcasas = new casas(req.body);
+    if (req.file) {
+      newcasas.photo = req.file.path;
+    }
     const createdcasas = newcasas.save();
     return res.json({
       status: 201,

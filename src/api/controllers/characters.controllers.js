@@ -32,6 +32,9 @@ const getAllCharacters = async (req, res, next) => {
   const createCharacter = async (req, res, next) => {
     try {
       const newCharacter = new Character(req.body);
+      if (req.file) {
+        newCharacter.photo = req.file.path;
+      }
       const createdCharacter = newCharacter.save();
       return res.json({
         status: 201,
