@@ -5,6 +5,9 @@ const logger = require("morgan");
 
 dotenv.config();
 
+const {connect} = require ("./src/utils/database");
+connect()
+
 const PORT = process.env.PORT || 5000;
 
 const server = express();
