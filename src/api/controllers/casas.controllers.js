@@ -33,13 +33,13 @@ const createcasas = async (req, res, next) => {
   try {
     const newcasas = new casas(req.body);
     if (req.file) {
-      newcasas.photo = req.file.path;
+      newcasas.escudo = req.file.path;
     }
     const createdcasas = newcasas.save();
     return res.json({
       status: 201,
       message: HTTPSTATUSCODE[201],
-      createdcasas: newcasas,
+      createdcasas: createdcasas,
     });
   } catch (error) {
     return next(error);
