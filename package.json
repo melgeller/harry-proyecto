@@ -1,0 +1,25 @@
+{
+  "name": "tabajo.1",
+  "version": "1.0.0",
+  "description": "Harry Potter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.5"
+  }
+}
