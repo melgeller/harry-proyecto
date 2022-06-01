@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-//Importamos el middleware de autorización
+
 const {isAuth} = require("../../middlewares/auth.middleware");
 
 const {

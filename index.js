@@ -40,3 +40,7 @@ server.use(
   server.use("/characters", charactersRouter);
   server.use("/casas", casasRouter);
   server.use("/varitas", varitasRouter)
+
+  server.listen(PORT, () =>{
+    console.log(`Server running on http://localhost:${PORT}`);
+})
