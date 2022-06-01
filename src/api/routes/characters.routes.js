@@ -9,7 +9,7 @@ const {
   getCharacterByID,
   createCharacter,
   deleteCharacter
-} = require("../controllers/albums.controller");
+} = require("../controllers/characters.controllers");
 
 router.get("/", getAllCharacters);
 router.get("/:id", getCharacterByID);

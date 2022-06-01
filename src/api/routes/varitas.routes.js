@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllVaritas, getVaritaByID, createVarita, deleteVarita} = require("../controllers/varitas.controllers")
+const {isAuth} = require("../../middlewares/auth.middleware");
+
+const { getAllVaritas, getVaritaByID, createVarita, deleteVarita} = require("../controllers/varitas.controllers");
+
 
 
 router.get("/", getAllVaritas);
 router.get("/:id", getVaritaByID);
-router.post("/", createVarita);
+router.post("/", [isAuth], createVarita);
 router.delete("/:id", deleteVarita)
 
 
