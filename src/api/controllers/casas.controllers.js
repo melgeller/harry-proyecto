@@ -18,7 +18,7 @@ const getAllcasas = async (req, res, next) => {
 const getcasasByID = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const casasByID = await casas.findById(id).populate("characters");
+    const casasByID = await casas.findById(id).populate("personajes");
     return res.json({
       status: 200,
       message: HTTPSTATUSCODE[200],
