@@ -2,7 +2,7 @@ const casas$$ = document.querySelector(".casas");
 
 const personaje$$ = document.querySelector(".personajes")
 
-
+const varitaje$$ = document.querySelector(".varitas")
 
 const getCasas = async ()=> {
     const casasApi = await fetch("http://localhost:5000/casas");
@@ -11,6 +11,15 @@ const getCasas = async ()=> {
     pintandoCasa(casasJson)
     pintandopPersonaje(casasJson)
 }
+
+const getVaritas = async ()=> {
+    const varitasApi = await fetch("http://localhost:5000/varitas");
+    const varitasJson = await varitasApi.json();
+    console.log(varitasJson)
+    pintandoVarita(varitasJson)
+    
+}
+
 
 
 
@@ -23,21 +32,20 @@ const pintandoCasa = (arraycards) => {
         const tituloCasa$$ = document.createElement("h2");
         const escudo$$ = document.createElement("img");
         const animal$$ = document.createElement("p");
-        const divNuevo$$ = document.createElement("div")
+        
         
 
         tituloCasa$$.textContent = casa.name;
         escudo$$.src= casa.escudo;
         animal$$.textContent = casa.fundador;
-        escudo$$.addEventListener("click", function(){
-            document.querySelector(".divNuevo").style.display = "block";
-        });
+       
 
         divCasa$$.appendChild(tituloCasa$$);
         divCasa$$.appendChild(escudo$$);
         divCasa$$.appendChild(animal$$);
         casas$$.appendChild(divCasa$$);
-        casas$$.appendChild(divNuevo$$)
+        
+
         escudo$$.className = "escudo";
         
         animal$$.className = "animales";
@@ -46,23 +54,24 @@ const pintandoCasa = (arraycards) => {
         console.log(casa);
       
         divCasa$$.className= "casita";
-        divNuevo$$.className = "divNuevo tow";
+        
         
         
         
         for (const chaval of casa.personajes) {
             const personajesCasa$$ = document.createElement("p");
-            personajesCasa$$.textContent = chaval.name;
-            divNuevo$$.appendChild(personajesCasa$$)
-
             
+            personajesCasa$$.textContent = chaval.name;
+            divCasa$$.appendChild(personajesCasa$$);
+            console.log(chaval.name);
+            personajesCasa$$.className="pe"
         }
 
         
     }
 }
 
-getCasas()
+
 
 
 const pintandopPersonaje = (arraycards) => {
@@ -100,47 +109,37 @@ const pintandopPersonaje = (arraycards) => {
     }
     }
 }
+const pintandoVarita = (arraycards) => {
+    for (const varita of arraycards.varita) {
+        const divVarita$$ = document.createElement("div")
+        const tituloVarita$$ = document.createElement("h2");
+        const nucleo$$ = document.createElement("p");
+        const material$$ = document.createElement("p");
+        const longitud$$ = document.createElement("p");
+        
 
-const pintandopVarita = (arraycards) => {
-    for (const casa of arraycards.casas) {
-        console.log(casa);
-        for (const personaje of casa.personajes.varitas) {
-            
+        tituloVarita$$.textContent = "Dueño: " + varita.master;
+        nucleo$$.textContent= "Nucleo: " + varita.nucleo;
+        material$$.textContent = varita.madera;
+        longitud$$.textContent = "Largo: " + varita.largo + " cm";
+       
 
-            const divpersonaje$$ = document.createElement("div")
-            const titulopersonaje$$ = document.createElement("h2");
-            const foto$$ = document.createElement("img");
-            const casa$$ = document.createElement("p");
-            const age$$ = document.createElement("p");
+        divVarita$$.appendChild(tituloVarita$$);
+        divVarita$$.appendChild(nucleo$$);
+        divVarita$$.appendChild(material$$);
+        divVarita$$.appendChild(longitud$$);
+        varitaje$$.appendChild(divVarita$$)
+        
 
-            
-
-
-            titulopersonaje$$.textContent = personaje.name;
-            foto$$.src= personaje.photo;
-            casa$$.textContent = "Casa: " + personaje.house;
-            age$$.textContent = "Edad: " + personaje.age;
-
-            divpersonaje$$.appendChild(titulopersonaje$$);
-            divpersonaje$$.appendChild(foto$$);
-            divpersonaje$$.appendChild(casa$$);
-            divpersonaje$$.appendChild(age$$);
-            personaje$$.appendChild(divpersonaje$$);
-
-            foto$$.className = "foto_personaje";
-            divpersonaje$$.className= "personajito";
-            casa$$.className = "casa_edad";
-            titulopersonaje$$.className = "titulo_personaje";
-            age$$.className = "casa_edad";
-                
-            }
-            
+        divVarita$$.className= "varitaje"
         
         
     }
-    }
+}
 
+    
 
-
+    getCasas()
+    getVaritas()
 
     

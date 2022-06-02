@@ -57,6 +57,7 @@ body{
         justify-content: space-around;
         flex-wrap: wrap;
     }
+    
 
     .casita{
     color: white;
@@ -66,6 +67,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     height: 500px;
+        
     }
     .casita:hover{
         -webkit-transform: scale(1.1);
@@ -84,6 +86,7 @@ body{
 
     .animales{
         font-size: x-large;
+        color: gold
     }
     .titulocasa{
         border: 2px solid palegoldenrod;
@@ -149,10 +152,4 @@ body{
     .casa_edad{
         font-size: large;
     }
-    .divNuevo{
-
-        background-color: wheat;
-        display: none;
-    }
-
-    
+ 
