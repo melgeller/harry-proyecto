@@ -10,7 +10,7 @@ const casasSchema = new Schema(
     color: { type: Number, required: false },
     animal: { type: String, required: false },
     elemento: { type: String, required: true },
-    personajes: [{ type: Schema.Types.ObjectId, ref: "characters"}]
+    personajes: [{ type: Schema.Types.ObjectId, ref: "character"}]
   },
   { timestamps: true }
 );

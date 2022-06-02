@@ -31,6 +31,7 @@ const getAllCharacters = async (req, res, next) => {
 
   const createCharacter = async (req, res, next) => {
     try {
+      console.log(req.body)
       const newCharacter = new Character(req.body);
       if (req.file) {
         newCharacter.photo = req.file.path;
