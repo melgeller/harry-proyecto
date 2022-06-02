@@ -70,6 +70,8 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .casita {
@@ -113,5 +115,15 @@ body {
   border: 2px solid palegoldenrod;
   border-radius: 10px;
   padding: 10px;
+}
+
+.foto_personaje {
+  height: 150px;
+}
+
+.personajito {
+  background-color: lightblue;
+  color: white;
+  width: 100px;
 }
 /*# sourceMappingURL=front.styles.css.map */

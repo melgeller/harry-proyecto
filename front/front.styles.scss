@@ -53,6 +53,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .casita{
@@ -86,4 +87,14 @@ body{
         border: 2px solid palegoldenrod;
         border-radius: 10px;
         padding: 10px;
+    }
+
+    .foto_personaje{
+
+        height: 150px;
+    }
+    .personajito{
+        background-color: lightblue;
+        color: white;
+        width: 100px;
     }

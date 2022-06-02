@@ -1,6 +1,6 @@
-const casas$$ = document.querySelector(".casas")
+const casas$$ = document.querySelector(".casas");
 
-
+const personaje$$ = document.querySelector(".personajes")
 
 
 const getCasas = async ()=> {
@@ -8,6 +8,7 @@ const getCasas = async ()=> {
     const casasJson = await casasApi.json();
     console.log(casasJson)
     pintandoCasa(casasJson)
+    pintandopPersonaje(casasJson)
 }
 
 
@@ -25,7 +26,7 @@ const pintandoCasa = (arraycards) => {
 
         tituloCasa$$.textContent = casa.name;
         escudo$$.src= casa.escudo;
-        animal$$.textContent = "Animal: " + casa.animal;
+        animal$$.textContent = casa.fundador;
 
         divCasa$$.appendChild(tituloCasa$$);
         divCasa$$.appendChild(escudo$$);
@@ -39,3 +40,39 @@ const pintandoCasa = (arraycards) => {
 }
 
 getCasas()
+
+
+const pintandopPersonaje = (arraycards) => {
+    for (const casa of arraycards.casas) {
+        console.log(casa);
+        for (const personaje of casa.personajes) {
+            
+        
+        const divpersonaje$$ = document.createElement("div")
+        const titulopersonaje$$ = document.createElement("h2");
+        const foto$$ = document.createElement("img");
+        const casa$$ = document.createElement("p");
+        const age$$ = document.createElement("p");
+
+        
+
+
+        titulopersonaje$$.textContent = personaje.name;
+        foto$$.src= personaje.photo;
+        casa$$.textContent = "Casa: " + personaje.house;
+        age$$.textContent = "Edad: " + personaje.age;
+
+        divpersonaje$$.appendChild(titulopersonaje$$);
+        divpersonaje$$.appendChild(foto$$);
+        divpersonaje$$.appendChild(casa$$);
+        divpersonaje$$.appendChild(age$$);
+        personaje$$.appendChild(divpersonaje$$);
+
+        foto$$.className = "foto_personaje";
+        divpersonaje$$.className= "personajito";
+        casa$$.className = "casa_edad";
+        titulopersonaje$$.className = "titulo_personaje";
+        age$$.className = "casa_edad";
+    }
+    }
+}
