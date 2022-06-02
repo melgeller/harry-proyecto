@@ -15,6 +15,8 @@ body{
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./assets/background.jpg);
   background-size: cover;
+  background-attachment: fixed;
+
 }
 .navbar{
     width: 100vw;
@@ -89,12 +91,61 @@ body{
         padding: 10px;
     }
 
-    .foto_personaje{
-
-        height: 150px;
-    }
     .personajito{
-        background-color: lightblue;
+        background-color: black;
         color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    width: 400px;
+    height: 500px;
+    border: 2px solid wheat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(./assets/mapa.jpg);
+    
+}
+
+    .personajito:hover{
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 0.5s;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/82fce402-706e-4c0c-907f-1a3480232117/d7k1sul-066dcb53-0862-4247-b73b-e52f1c53e524.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzgyZmNlNDAyLTcwNmUtNGMwYy05MDdmLTFhMzQ4MDIzMjExN1wvZDdrMXN1bC0wNjZkY2I1My0wODYyLTQyNDctYjczYi1lNTJmMWM1M2U1MjQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.8xEKH15mAK6QiyxWoDdswgsdghxmfdCVUnosE7f5gis");
+        background-size: cover;
+        background-position: center;
+
+    }
+    .personajito:not(:hover){
+        transition: 0.5s;}
+
+    .personajes{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 50px;
+        padding: 30px;
+    }
+
+    .foto_personaje{
+        max-height: 300px;
+        max-width: 300px;
+
+
+    }
+
+    .interludio{
+        color: white;
+        font-size: xx-large;
+        text-align: center;
+        margin-top: 200px;
+        margin-bottom: 150px;
+    }
+
+    .logotipo{
         width: 100px;
+    }
+
+    .casa_edad{
+        font-size: large;
     }
