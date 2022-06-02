@@ -7,12 +7,16 @@ const {
   getAllCharacters,
   getCharacterByID,
   createCharacter,
-  deleteCharacter
+  deleteCharacter,
+  getAllMagos
 } = require("../controllers/characters.controllers");
 
 router.get("/", getAllCharacters);
-router.get("/:id", getCharacterByID);
+router.get("/magos", getAllMagos);
+
+router.get("/id/:id", getCharacterByID);
 router.post("/", upload.single("photo"), createCharacter);
-router.delete("/:id",deleteCharacter);
+router.delete("/id/:id",deleteCharacter);
+
 
 module.exports = router;

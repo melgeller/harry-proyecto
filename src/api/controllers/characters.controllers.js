@@ -59,8 +59,35 @@ const getAllCharacters = async (req, res, next) => {
   
   };
 
+  const getAllMagos = async (req, res, next) => {
+    try {
+      
+      const allMagos = await Character.find();
+      const muggle = []
+      for (const mago of allMagos) {
+          
+        if (mago.muggle === false) {
+          muggle.push(mago)
+        }
+       
+      }
+      console.log(muggle);
+      
+        return res.json({
+          status: 200,
+          message: HTTPSTATUSCODE[200],
+          allMagos: muggle,
+        });
+        
+      
+      
+    } catch (error) {
+      return next(error);
+    }
+  };
 
 
 
 
-  module.exports = { getAllCharacters, getCharacterByID, createCharacter, deleteCharacter };
+
+  module.exports = { getAllCharacters, getCharacterByID, createCharacter, deleteCharacter, getAllMagos};
