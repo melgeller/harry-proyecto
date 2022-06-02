@@ -29,7 +29,9 @@ const pintandoCasa = (arraycards) => {
         tituloCasa$$.textContent = casa.name;
         escudo$$.src= casa.escudo;
         animal$$.textContent = casa.fundador;
-        
+        escudo$$.addEventListener("click", function(){
+            document.querySelector(".divNuevo").style.display = "block";
+        });
 
         divCasa$$.appendChild(tituloCasa$$);
         divCasa$$.appendChild(escudo$$);
@@ -37,11 +39,17 @@ const pintandoCasa = (arraycards) => {
         casas$$.appendChild(divCasa$$);
         casas$$.appendChild(divNuevo$$)
         escudo$$.className = "escudo";
-        divCasa$$.className= "casita flip-card-front";
+        
         animal$$.className = "animales";
         tituloCasa$$.className = "titulocasa";
-        divNuevo$$.className = "divNuevo flip-card-back";
+       
         console.log(casa);
+      
+        divCasa$$.className= "casita";
+        divNuevo$$.className = "divNuevo tow";
+        
+        
+        
         for (const chaval of casa.personajes) {
             const personajesCasa$$ = document.createElement("p");
             personajesCasa$$.textContent = chaval.name;
