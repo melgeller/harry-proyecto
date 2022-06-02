@@ -37,10 +37,10 @@ const pintandoCasa = (arraycards) => {
         casas$$.appendChild(divCasa$$);
         casas$$.appendChild(divNuevo$$)
         escudo$$.className = "escudo";
-        divCasa$$.className= "casita";
+        divCasa$$.className= "casita flip-card-front";
         animal$$.className = "animales";
         tituloCasa$$.className = "titulocasa";
-        divNuevo$$.className = "divNuevo";
+        divNuevo$$.className = "divNuevo flip-card-back";
         console.log(casa);
         for (const chaval of casa.personajes) {
             const personajesCasa$$ = document.createElement("p");
