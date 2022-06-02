@@ -52,11 +52,65 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(255, 255, 255, 0.719);
+  background-color: rgba(255, 255, 255, 0.575);
+  border-bottom: palegoldenrod 2px solid;
 }
 
 .navbar1 img {
   width: 120px;
   margin: 20px;
+}
+
+.casas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.casita {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 500px;
+}
+
+.casita:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.casita:not(:hover) {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.escudo {
+  height: 300px;
+}
+
+.animales {
+  font-size: x-large;
+}
+
+.titulocasa {
+  border: 2px solid palegoldenrod;
+  border-radius: 10px;
+  padding: 10px;
 }
 /*# sourceMappingURL=front.styles.css.map */

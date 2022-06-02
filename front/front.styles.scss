@@ -40,10 +40,49 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.719);
+        background-color: rgba(255, 255, 255, 0.575);
+        border-bottom: palegoldenrod 2px solid;
     }
 
     .navbar1 img{
         width: 120px;
         margin: 20px;
+    }
+    
+    .casas{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .casita{
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+    }
+    .casita:hover{
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    .casita:not(:hover){
+        transition: 0.5s;
+      }
+
+    .escudo{
+        height: 300px;
+    }
+
+    .animales{
+        font-size: x-large;
+    }
+    .titulocasa{
+        border: 2px solid palegoldenrod;
+        border-radius: 10px;
+        padding: 10px;
     }

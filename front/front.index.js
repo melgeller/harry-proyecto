@@ -31,8 +31,9 @@ const pintandoCasa = (arraycards) => {
         divCasa$$.appendChild(escudo$$);
         divCasa$$.appendChild(animal$$);
         casas$$.appendChild(divCasa$$);
+        escudo$$.className = "escudo";
         divCasa$$.className= "casita";
-        casas$$.className = "casaPoke";
+        animal$$.className = "animales";
         tituloCasa$$.className = "titulocasa";
     }
 }
