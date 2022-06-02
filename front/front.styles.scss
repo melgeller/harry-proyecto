@@ -1,5 +1,49 @@
+@font-face {
+    font-family: 'Bluu';
+    src: url('./assets/FONTS/BluuNext-Titling.otf');
+}
+
+
 *{
     margin: 0;
     padding: 0;
-    
+    font-family: 'Bluu';
+    text-decoration: none;
+    list-style:none;
 }
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./assets/background.jpg);
+  background-size: cover;
+}
+.navbar{
+    width: 100vw;
+    height: 60px;
+    background-color: rgba(245, 245, 245, 0.267);
+    display: flex;
+    justify-content: center;
+
+    }
+
+
+    .listas {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        color: white;
+        font-size: large;
+    }
+
+
+    .navbar1{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.719);
+    }
+
+    .navbar1 img{
+        width: 120px;
+        margin: 20px;
+    }
