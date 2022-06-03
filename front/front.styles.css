@@ -196,7 +196,6 @@ body {
 }
 /*# sourceMappingURL=front.styles.css.map */
 .varitaje{
-  background-color: lightblue;
   width: 20vw;
   height: 20vh;
   margin: 10px;
@@ -208,15 +207,24 @@ body {
   color: white;
   border-radius: 30px;
   border: gold;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("https://i.pinimg.com/originals/9d/4c/9e/9d4c9e0efc2f9995fd2d387d8751647b.jpg")
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("https://i.pinimg.com/originals/9d/4c/9e/9d4c9e0efc2f9995fd2d387d8751647b.jpg");
+  border: 2px solid wheat;
+
 }
 .varitas{
   display: flex;
   flex-wrap: wrap;
   border-radius: 10px;
   justify-content: center;
+  color: solid white;
+
   
 }
 .person{
   color: white;
+}
+.listas h3:hover{
+  color: gold;
+  text-decoration: underline ;
+  transition: 0.5s;  
 }
